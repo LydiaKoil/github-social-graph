@@ -31,3 +31,28 @@ def commits_per_day():
     # iris = px.data.iris() # iris is a pandas DataFrame
     # fig = px.scatter(iris, x="sepal_width", y="sepal_length")
     # fig.show()
+
+
+def commits_ratio():
+    response = requests.get('https://api.github.com/repos/rvailnaveed/pii-tool/stats/participation')
+    print(response.text)
+    data = json.loads(response.text)
+    owner = data['owner']
+    others = data['all']
+    i=0
+    for _ in others:
+        others[i]= others[i]-owner[i]
+        i+=1
+    owner_f=[]
+    others_f=[]
+
+    for i in range(7,19):
+        others_f.append(others[i])
+        owner_f.append(owner[i])
+
+
+    print(others_f)
+    print(owner_f)
+
+    return [owner_f, others_f]
+
