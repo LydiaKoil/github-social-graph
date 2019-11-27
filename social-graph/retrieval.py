@@ -11,7 +11,7 @@ import numpy as np
 import plotly.express as px
 
 def commits_per_day():
-    response = requests.get('https://api.github.com/repos/rvailnaveed/College-Work/stats/commit_activity')
+    response = requests.get('https://api.github.com/repos/jonahwilliams/webdev/stats/commit_activity')
     data = json.loads(response.text)
     
     days=['Sunday','Monday','Tuesday','Wednesday', 'Thursday', 'Friday','Saturday','Sunday']
