@@ -12,22 +12,22 @@ import plotly.express as px
 
 from requests.auth import HTTPBasicAuth
 
-credentials = json.loads(open('credentials.json').read())
-authentication = HTTPBasicAuth(credentials['username'], credentials['password'])
+#credentials = json.loads(open('credentials.json').read())
+#authentication = HTTPBasicAuth(credentials['username'], credentials['password'])
 
 def commits_per_day():
-    response = requests.get('https://api.github.com/repos/rvailnaveed/College-Work/stats/commit_activity', auth=authentication)
+    response = requests.get('https://api.github.com/repos/rvailnaveed/College-Work/stats/commit_activity')
     data = json.loads(response.text)
-    
+
     days=['Sunday','Monday','Tuesday','Wednesday', 'Thursday', 'Friday','Saturday','Sunday']
     values=[0,0,0,0,0,0,0]
     i=0
-    for item in data: 
+    for item in data:
         for day in item['days']:
             values[i]+=day
             i+=1
         i=0
-    
+
     data = []
     data.append(days)
     data.append(values)
@@ -38,7 +38,11 @@ def commits_per_day():
     # fig.show()
 
 def commits_ratio():
+<<<<<<< HEAD
     response = requests.get('https://api.github.com/repos/rvailnaveed/pii-tool/stats/participation', auth=authentication)
+=======
+    response = requests.get('https://api.github.com/repos/rvailnaveed/pii-tool/stats/participation')
+>>>>>>> 8cd8e30b0c8c258b29ac5321e18b454fc6440258
     data = json.loads(response.text)
     owner = data['owner']
     others = data['all']
@@ -48,6 +52,7 @@ def commits_ratio():
         i+=1
     owner_f=[]
     others_f=[]
+<<<<<<< HEAD
     
     for i in range(7,19):
         others_f.append(others[i])
@@ -59,10 +64,26 @@ def commits_ratio():
 
 def languages_used():
     response = requests.get('https://api.github.com/repos/rvailnaveed/College-Work/languages', auth=authentication)
+=======
+
+    for i in range(7,19):
+        others_f.append(others[i])
+        owner_f.append(owner[i])
+
+
+
+    return [owner_f, others_f]
+
+def languages_used():
+    response = requests.get('https://api.github.com/repos/rvailnaveed/College-Work/languages')
+>>>>>>> 8cd8e30b0c8c258b29ac5321e18b454fc6440258
     data = json.loads(response.text)
     count=list(data.values())
     langs=list(data.keys())
 
     return [count, langs]
+<<<<<<< HEAD
     
 
+=======
+>>>>>>> 8cd8e30b0c8c258b29ac5321e18b454fc6440258

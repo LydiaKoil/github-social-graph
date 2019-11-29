@@ -36,7 +36,11 @@ fig.add_trace(go.Scatter(
     x = list(range(1,len(others))),
     y = others,
     name="Other Contributors",
+<<<<<<< HEAD
     hovertemplate = 
+=======
+    hovertemplate =
+>>>>>>> 8cd8e30b0c8c258b29ac5321e18b454fc6440258
     '<b>Commits</b>: %{y}<extra></extra>'+
     '<br><b>Week</b>: %{x}<br>',
     showlegend = True),
@@ -72,4 +76,8 @@ fig.add_layout_image(
 
 
 
+<<<<<<< HEAD
 fig.show()
+=======
+fig.show()
+>>>>>>> 8cd8e30b0c8c258b29ac5321e18b454fc6440258
