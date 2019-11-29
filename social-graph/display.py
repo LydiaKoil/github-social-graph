@@ -52,15 +52,5 @@ fig2.update_layout(autosize=False,
         pad=4
     ))
 
-<<<<<<< HEAD
-
-
-
 fig2.show()
 
-
-
-=======
-fig2.show()
-
->>>>>>> 8cd8e30b0c8c258b29ac5321e18b454fc6440258
