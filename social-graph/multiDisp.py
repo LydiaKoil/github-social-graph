@@ -47,7 +47,7 @@ langData = retrieval.languages_used()
 count = langData[0]
 langs = langData[1]
 
-fig.add_trace(go.Pie(values=count, labels=langs),
+fig.add_trace(go.Pie(values=count, labels=langs ,name="Languages"),
               row=2, col=1)
 
 fig.update_layout(height=1000,
@@ -58,17 +58,10 @@ fig.update_layout(height=1000,
         'xanchor': 'center',
         'yanchor': 'top'},
                   font=dict( family="Courier New, monospace",color="#232b2b")
-    )
-
-fig.add_layout_image(
-    dict(
-        source="https://banner2.cleanpng.com/20180320/iew/kisspng-computer-icons-github-desktop-wallpaper-clip-art-icon-github-download-5ab1a968570b46.7771010815215926803565.jpg",
-        xref="paper", yref="paper",
-        x=1, y=1.05,
-        sizex=0.2, sizey=0.2,
-        xanchor="right", yanchor="bottom"
-    )
 )
+
+
+
 
 
 
